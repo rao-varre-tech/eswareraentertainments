@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eswar Era Entertainments — Films, Novels &amp; Production Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#362b5a;
+    --crimson:#d2143a;
+    --ash:#b2beb5;
+    --white:#ffffff;
+    --bg:#150f1c;
+    --bg-card:#1f1830;
+    --line: rgba(255,255,255,0.10);
+    --muted: rgba(255,255,255,0.62);
+    --muted-dim: rgba(255,255,255,0.4);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    overflow-x:hidden;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .display{font-family:'Fraunces',serif;}
+  ::selection{background:var(--crimson); color:var(--white);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--crimson);
+    outline-offset:3px;
+  }
+
+  .wrap{max-width:1160px; margin:0 auto; padding:0 32px;}
+  @media(max-width:600px){ .wrap{padding:0 22px;} }
+
+  /* ---------------- Sprocket divider (signature) ---------------- */
+  .sprocket{
+    display:flex;
+    gap:10px;
+    padding:14px 0;
+    overflow:hidden;
+  }
+  .sprocket span{
+    width:8px;height:8px;
+    background:var(--ash);
+    opacity:0.35;
+    flex-shrink:0;
+    border-radius:1px;
+  }
+
+  /* ---------------- Header ---------------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(21,15,28,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:70px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+ .logo-img{
+    
+    border-radius:8px;
+    flex-shrink:0;
+  }
+  
+ 
+  .brand-name{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.15rem;
+    letter-spacing:0.01em;
+  }
+  .navlinks{display:flex; gap:32px;}
+  .navlinks a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.74rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--muted);
+    transition:color 0.2s;
+    position:relative;
+  }
+  .navlinks a:hover{color:var(--white);}
+  @media(max-width:800px){ .navlinks{display:none;} }
+  .nav-cta{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.74rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    padding:9px 18px;
+    border-radius:6px;
+    background:linear-gradient(135deg, var(--purple), var(--crimson));
+    transition:opacity 0.2s;
+  }
+  .nav-cta:hover{opacity:0.85;}
+
+  /* ---------------- Hero ---------------- */
+  .hero{padding:150px 0 60px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.76rem;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    color:var(--ash);
+    margin-bottom:22px;
+  }
+  h1.title{
+    font-family:'Fraunces',serif;
+    font-weight:340;
+    font-size:clamp(2.4rem, 6.4vw, 4.6rem);
+    line-height:1.04;
+    max-width:820px;
+  }
+  h1.title em{
+    font-style:italic;
+    font-weight:600;
+    background:linear-gradient(120deg, var(--ash), var(--crimson));
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .hero p.lede{
+    max-width:560px;
+    margin-top:26px;
+    color:var(--muted);
+    font-size:1.05rem;
+  }
+  .hero-ctas{display:flex; gap:16px; margin-top:38px; flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    padding:13px 24px;
+    border-radius:6px;
+    display:inline-block;
+  }
+  .btn-solid{background:linear-gradient(135deg, var(--purple), var(--crimson)); color:var(--white);}
+  .btn-solid:hover{opacity:0.88;}
+  .btn-outline{border:1px solid var(--line); color:var(--white);}
+  .btn-outline:hover{border-color:var(--ash);}
+
+  .disciplines{
+    display:flex; gap:28px; margin-top:56px; flex-wrap:wrap;
+    font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:var(--muted-dim);
+  }
+  .disciplines span{color:var(--ash);}
+
+  /* ---------------- Section pattern ---------------- */
+  section{padding:90px 0 20px;}
+  .section-head{margin-bottom:44px;}
+  .section-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.75rem;
+    color:var(--crimson);
+    display:block;
+    margin-bottom:14px;
+  }
+  .section-title{
+    font-family:'Fraunces',serif;
+    font-size:clamp(1.8rem,3.6vw,2.5rem);
+    font-weight:450;
+  }
+  .section-intro{
+    max-width:600px;
+    margin-top:16px;
+    color:var(--muted);
+  }
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity 0.6s ease, transform 0.6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------------- Gallery tiles (placeholders) ---------------- */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-bottom:52px;
+  }
+  @media(max-width:760px){ .gallery{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:480px){ .gallery{grid-template-columns:1fr;} }
+
+  .tile{
+    position:relative;
+    aspect-ratio:4/3;
+    border-radius:10px;
+    overflow:hidden;
+    background:linear-gradient(155deg, var(--purple) 0%, #241b3d 45%, var(--bg-card) 100%);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:flex-end;
+    padding:14px;
+  }
+  .tile.portrait{aspect-ratio:3/4;}
+  .tile svg{
+    position:absolute;
+    top:50%;left:50%;
+    width:34px;height:34px;
+    transform:translate(-50%,-58%);
+    opacity:0.55;
+  }
+  .tile figcaption{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;
+    color:var(--muted);
+    position:relative;
+    z-index:2;
+    background:rgba(21,15,28,0.55);
+    padding:4px 8px;
+    border-radius:4px;
+  }
+  .tile:hover{border-color:var(--ash);}
+
+  /* ---------------- Entry rows (films / novels) ---------------- */
+  .entries{border-top:1px solid var(--line);}
+  .entry{
+    display:grid;
+    grid-template-columns:90px 1fr 100px;
+    gap:24px;
+    align-items:start;
+    padding:28px 0;
+    border-bottom:1px solid var(--line);
+  }
+  @media(max-width:600px){ .entry{grid-template-columns:50px 1fr; row-gap:8px;} .entry .entry-year{display:none;} }
+  .entry-no{font-family:'IBM Plex Mono',monospace; color:var(--crimson); font-size:0.85rem;}
+  .entry-title{font-family:'Fraunces',serif; font-size:1.35rem; font-weight:500; margin-bottom:6px;}
+  .entry-desc{color:var(--muted); font-size:0.94rem; max-width:56ch;}
+  .entry-year{font-family:'IBM Plex Mono',monospace; font-size:0.8rem; color:var(--muted-dim); text-align:right;}
+
+  /* ---------------- Services ---------------- */
+  .service-block{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    padding:36px 0;
+    border-bottom:1px solid var(--line);
+  }
+  @media(max-width:760px){ .service-block{grid-template-columns:1fr;} }
+  .service-info .s-icon{
+    width:44px;height:44px;
+    border-radius:8px;
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px;
+  }
+  .service-info .s-icon svg{width:22px;height:22px;}
+  .service-info h3{font-family:'Fraunces',serif; font-size:1.5rem; font-weight:500; margin-bottom:10px;}
+  .service-info p{color:var(--muted); font-size:0.95rem; max-width:44ch;}
+  .service-gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+  }
+  .service-gallery .tile{aspect-ratio:1/1;}
+  .service-gallery .tile svg{width:24px;height:24px;}
+
+  /* ---------------- Contact ---------------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+  }
+  @media(max-width:760px){ .contact-grid{grid-template-columns:1fr;} }
+  .info-list{font-family:'IBM Plex Mono',monospace; font-size:0.88rem; line-height:2.1;}
+  .info-list .label{
+    display:block;
+    color:var(--ash);
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-top:22px;
+    margin-bottom:2px;
+  }
+  .info-list a{border-bottom:1px solid var(--line);}
+  .info-list a:hover{border-color:var(--ash);}
+  .map-block{
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:var(--bg-card);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:220px;
+    color:var(--muted-dim);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.8rem;
+    text-align:center;
+    padding:24px;
+  }
+
+  /* ---------------- Request form ---------------- */
+  .form-card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:44px;
+  }
+  @media(max-width:600px){ .form-card{padding:28px 22px;} }
+  .form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    margin-bottom:22px;
+  }
+  @media(max-width:600px){ .form-grid{grid-template-columns:1fr;} }
+  .field{display:flex; flex-direction:column; gap:8px;}
+  .field.full{grid-column:1/-1;}
+  .field label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.07em;
+    color:var(--muted);
+  }
+  .field input, .field textarea{
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:7px;
+    padding:12px 14px;
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    font-size:0.95rem;
+    resize:vertical;
+  }
+  .field input:focus, .field textarea:focus{border-color:var(--ash);}
+  .field textarea{min-height:120px;}
+  .form-submit{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .form-submit button{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.8rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    padding:14px 30px;
+    border-radius:7px;
+    background:linear-gradient(135deg, var(--purple), var(--crimson));
+    color:var(--white);
+    border:none;
+    cursor:pointer;
+    transition:opacity 0.2s;
+  }
+  .form-submit button:hover{opacity:0.88;}
+  .form-status{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    color:var(--ash);
+  }
+
+  /* ---------------- Footer ---------------- */
+  footer{
+    margin-top:100px;
+    border-top:1px solid var(--line);
+    padding:32px 0 40px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    color:var(--muted-dim);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <div class="logo-mark">
+		<img class="logo-img" src="EEE website logo square.png" alt="Description of image" width="50px" height="50px">
+      </div>
+      <div class="brand-name">Eswar Era Entertainments</div>
+	  
+    </div>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#publications">Publications</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#request" class="nav-cta">Send a request</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="eyebrow">Filmmaker · Novelist · Production Studio</div>
+    <h1 class="title">Stories told on <em>screen</em>, on <em>paper</em>, and everything in between.</h1>
+    <p class="lede">I write and direct short films, publish novels, and offer end-to-end production services — from script to score — for creators who need a single hand across the whole process.</p>
+    <div class="hero-ctas">
+      <a href="#work" class="btn btn-solid">View the work</a>
+      <a href="#request" class="btn btn-outline">Make a request</a>
+    </div>
+    <div class="disciplines">
+      <div><span>01</span> Short Films</div>
+      <div><span>02</span> Novels</div>
+      <div><span>03</span> Script &amp; Production</div>
+      <div><span>04</span> Sound &amp; Music</div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="sprocket" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div></div>
+
+  <!-- ================= WORK ================= -->
+  <section id="work" class="wrap">
+    <div class="section-head reveal">
+      <span class="section-num">01 / Work</span>
+      <h2 class="section-title">Short Films</h2>
+      <p class="section-intro">Behind the scenes from recent shoots, alongside the films themselves — each one written, directed, and produced from the ground up.</p>
+    </div>
+
+    <div class="gallery reveal">
+      <figure class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><figcaption>On set — day 1</figcaption></figure>
+      <figure class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M3 7l6 4-6 4V7z"/><path d="M13 7l6 4-6 4V7z"/></svg><figcaption>Camera blocking</figcaption></figure>
+      <figure class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M4 20l6-14 6 14M8 14h4"/></svg><figcaption>Lighting setup</figcaption></figure>
+      <figure class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M3 10h18M7 6v-2M17 6v-2M5 6h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z"/></svg><figcaption>Location scout</figcaption></figure>
+      <figure class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M12 3v18M5 8l7-5 7 5M5 8v9l7 5 7-5V8"/></svg><figcaption>Editing bay</figcaption></figure>
+      <figure class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M4 12a8 8 0 0116 0"/></svg><figcaption>Cast &amp; crew</figcaption></figure>
+    </div>
+
+    <div class="entries reveal">
+      <div class="entry">
+        <span class="entry-no">01</span>
+        <div>
+          <div class="entry-title">Between the Static</div>
+          <p class="entry-desc">A radio operator in a coastal town picks up a signal that shouldn't exist. 16 minutes, official selection at two regional festivals.</p>
+        </div>
+        <span class="entry-year">2025</span>
+      </div>
+      <div class="entry">
+        <span class="entry-no">02</span>
+        <div>
+          <div class="entry-title">Paper Boats</div>
+          <p class="entry-desc">Two estranged brothers spend one afternoon trying to say what they never could. A quiet, dialogue-driven short shot on 16mm.</p>
+        </div>
+        <span class="entry-year">2024</span>
+      </div>
+      <div class="entry">
+        <span class="entry-no">03</span>
+        <div>
+          <div class="entry-title">The Last Reel</div>
+          <p class="entry-desc">A love letter to single-screen cinemas, told through the projectionist who refuses to close his booth. 22 minutes.</p>
+        </div>
+        <span class="entry-year">2023</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="sprocket" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div></div>
+
+  <!-- ================= PUBLICATIONS ================= -->
+  <section id="publications" class="wrap">
+    <div class="section-head reveal">
+      <span class="section-num">02 / Publications</span>
+      <h2 class="section-title">Novels</h2>
+      <p class="section-intro">Full-length fiction, independently published — each cover designed to match the tone of the book it wraps.</p>
+    </div>
+
+    <div class="gallery reveal" style="grid-template-columns:repeat(4,1fr);">
+      <figure class="tile portrait"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M4 4h11a2 2 0 012 2v14l-2-1-2 1-2-1-2 1-2-1-2 1V6a2 2 0 012-2z"/></svg><figcaption>Cover I</figcaption></figure>
+      <figure class="tile portrait"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M4 4h11a2 2 0 012 2v14l-2-1-2 1-2-1-2 1-2-1-2 1V6a2 2 0 012-2z"/></svg><figcaption>Cover II</figcaption></figure>
+      <figure class="tile portrait"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M4 4h11a2 2 0 012 2v14l-2-1-2 1-2-1-2 1-2-1-2 1V6a2 2 0 012-2z"/></svg><figcaption>Cover III</figcaption></figure>
+      <figure class="tile portrait"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M4 4h11a2 2 0 012 2v14l-2-1-2 1-2-1-2 1-2-1-2 1V6a2 2 0 012-2z"/></svg><figcaption>Cover IV</figcaption></figure>
+    </div>
+
+    <div class="entries reveal">
+      <div class="entry">
+        <span class="entry-no">01</span>
+        <div>
+          <div class="entry-title">The Weight of Small Rooms</div>
+          <p class="entry-desc">A literary novel following three generations of one family confined to a single apartment across sixty years of change outside its walls.</p>
+        </div>
+        <span class="entry-year">2025</span>
+      </div>
+      <div class="entry">
+        <span class="entry-no">02</span>
+        <div>
+          <div class="entry-title">Salt Line</div>
+          <p class="entry-desc">A slow-burn mystery set in a dying fishing village, where a missing boat unravels secrets three families have kept for decades.</p>
+        </div>
+        <span class="entry-year">2023</span>
+      </div>
+      <div class="entry">
+        <span class="entry-no">03</span>
+        <div>
+          <div class="entry-title">Marginalia</div>
+          <p class="entry-desc">A debut novel-in-letters between a retiring bookbinder and the stranger who keeps returning his damaged books, unread.</p>
+        </div>
+        <span class="entry-year">2021</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="sprocket" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div></div>
+
+  <!-- ================= SERVICES ================= -->
+  <section id="services" class="wrap">
+    <div class="section-head reveal">
+      <span class="section-num">03 / Services</span>
+      <h2 class="section-title">Production Services</h2>
+      <p class="section-intro">The same crafts behind my own films and books, available for hire — start to finish or wherever your project needs a hand.</p>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-info">
+        <div class="s-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h3>Script Writing</h3>
+        <p>Feature and short screenplays, treatments, and story consulting — from a logline to a locked shooting draft.</p>
+      </div>
+      <div class="service-gallery">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M4 4h16v16H4zM8 4v16M8 9h12"/></svg></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M6 19V5a2 2 0 012-2h6l4 4v12a2 2 0 01-2 2H8a2 2 0 01-2-2z"/></svg></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M3 6h18M3 12h18M3 18h11"/></svg></div>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-info">
+        <div class="s-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.5"><path d="M3 7l6 4-6 4V7zM13 7l6 4-6 4V7z"/></svg></div>
+        <h3>Video Editing</h3>
+        <p>Narrative and documentary editing, colour grading, and delivery — built around pacing that serves the story, not the timeline.</p>
+      </div>
+      <div class="service-gallery">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M4 6h16v12H4zM4 10h16M9 6v4"/></svg></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M4 18l5-10 4 6 3-4 4 8"/></svg></div>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-info">
+        <div class="s-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.5"><path d="M4 20l6-14 6 14M8 14h4"/></svg></div>
+        <h3>Film Production</h3>
+        <p>Full production management — casting, location, crew, and scheduling — for short films, branded content, and music videos.</p>
+      </div>
+      <div class="service-gallery">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M12 3v18M5 8l7-5 7 5M5 8v9l7 5 7-5V8"/></svg></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M4 12a8 8 0 0116 0"/></svg></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M3 10h18M5 6h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z"/></svg></div>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div class="service-info">
+        <div class="s-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.5"><path d="M9 18V5l10-2v14"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></div>
+        <h3>Music Production</h3>
+        <p>Original scores, sound design, and mixing for film and independent releases, built to sit under picture without fighting it.</p>
+      </div>
+      <div class="service-gallery">
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M3 12h2l2-6 3 12 3-9 2 6h5"/></svg></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M9 18V5l10-2v14"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></div>
+        <div class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="#b2beb5" stroke-width="1.4"><path d="M4 14a4 4 0 118 0v3a3 3 0 01-6 0M12 14a4 4 0 118 0v3a3 3 0 01-6 0"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="sprocket" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div></div>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="wrap">
+    <div class="section-head reveal">
+      <span class="section-num">04 / Contact</span>
+      <h2 class="section-title">Get in Touch</h2>
+    </div>
+
+    <div class="contact-grid reveal">
+      <div class="info-list">
+        <span class="label">Studio Address</span>
+        Eswar Era Entertainments<br>
+        4th Floor, Lakeview Complex<br>
+        Rajamahendravaram, Andhra Pradesh 533101<br>
+        India
+
+        <span class="label">Email</span>
+        <a href="mailto:hello@reelandink.com">hello@reelandink.com</a>
+
+        <span class="label">Phone</span>
+        <a href="tel:+919000000000">+91 90000 00000</a>
+
+        <span class="label">Hours</span>
+        Mon – Sat, 10am – 6pm IST
+      </div>
+      <div class="map-block">Map / studio location<br>can be embedded here</div>
+    </div>
+  </section>
+
+  <!-- ================= REQUEST FORM ================= -->
+  <section id="request" class="wrap">
+    <div class="section-head reveal">
+      <span class="section-num">05 / Request</span>
+      <h2 class="section-title">Start a Request</h2>
+      <p class="section-intro">Tell me a bit about what you need — a film, a book collaboration, or a production service — and I'll get back to you.</p>
+    </div>
+
+    <form class="form-card reveal" id="requestForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="rf-name">Name</label>
+          <input id="rf-name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="rf-phone">Contact Number</label>
+          <input id="rf-phone" name="phone" type="tel" required autocomplete="tel">
+        </div>
+        <div class="field full">
+          <label for="rf-email">Email</label>
+          <input id="rf-email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="field full">
+          <label for="rf-details">Request Details</label>
+          <textarea id="rf-details" name="details" required placeholder="Tell me about your project, timeline, and what you're looking for."></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button type="submit">Send request</button>
+        <span class="form-status" id="formStatus"></span>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>Eswar Era Entertainments © 2026</span>
+  <span>Films · Novels · Production Services</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // Request form: opens a prefilled email since this page has no backend.
+  // Replace this handler with a real endpoint (e.g. Formspree, or your own server) to collect submissions directly.
+  const form = document.getElementById('requestForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('rf-name').value.trim();
+    const phone = document.getElementById('rf-phone').value.trim();
+    const email = document.getElementById('rf-email').value.trim();
+    const details = document.getElementById('rf-details').value.trim();
+
+    const subject = encodeURIComponent('New project request from ' + name);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\n' +
+      'Contact number: ' + phone + '\n' +
+      'Email: ' + email + '\n\n' +
+      'Request details:\n' + details
+    );
+
+    window.location.href = 'mailto:hello@reelandink.com?subject=' + subject + '&body=' + body;
+    status.textContent = 'Opening your email app to send this request…';
+  });
+</script>
+
+</body>
+</html>
